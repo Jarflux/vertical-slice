@@ -8,6 +8,8 @@ public class CameraMouseInteraction : MonoBehaviour {
         if (Input.GetMouseButton(0)) {
             cameraLook.m_YAxis.m_InputAxisName = "Mouse Y";
             cameraLook.m_XAxis.m_InputAxisName = "Mouse X";
+        } else if (Input.GetMouseButton(1)) {
+            cameraLook.m_YAxis.m_InputAxisName = "Mouse Y";
         } else {
             cameraLook.m_YAxis.m_InputAxisName = "";
             cameraLook.m_XAxis.m_InputAxisName = "";
