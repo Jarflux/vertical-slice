@@ -15,6 +15,7 @@ public class UpgradeStation : Interactable
             Debug.Log("Upgrade Success");
             successAudio.Play();
             item.IncrementLevel();
+            player.GetComponent<Experience>().AddExperience(100);
         } else {
             Debug.Log("Upgrade Failure");
             FailureAudio.Play();
