@@ -6,12 +6,19 @@ public class Item : ScriptableObject
 {
     [Header("Basic Info")]
     [SerializeField] private new string name;
-    [SerializeField] private string quality;
+    [SerializeField] private Rarity rarity;
     [SerializeField] private int level;
     [SerializeField] private int value;
     [SerializeField] private Sprite icon;
 
-    public static Item CreateInstance(string name, string quality, int level) {
+    public enum Rarity : ushort {
+        Basic = 0,
+        Rare = 1,
+        Epic = 2,
+        Legendary = 3,
+    }
+
+    public static Item CreateInstance(string name, Rarity quality, int level) {
         var data = ScriptableObject.CreateInstance<Item>();
         data.Init( name, quality, level);
         return data;
@@ -25,18 +32,28 @@ public class Item : ScriptableObject
         level++;
     }
 
-    private void Init(string name, string quality, int level) {
+    private void Init(string name, Rarity rarity, int level) {
         this.name = name;
         this.level = level;
-        this.quality = quality;
+        this.rarity = rarity;
     }
 
     public string GetName() {
         return name;
     }
 
-    public string GetQuality() {
-        return quality;
+    public Rarity GetRarity() {
+        return rarity;
+    }
+
+    public Color GetRarityColor() {
+        return rarity switch {
+            Rarity.Basic => Color.white,
+            Rarity.Rare => Color.blue,
+            Rarity.Epic => Color.magenta,
+            Rarity.Legendary => Color.red,
+            _ => Color.white,
+        };
     }
 
     public int GetLevel() {
@@ -52,7 +69,7 @@ public class Item : ScriptableObject
     }
 
     public string getTooltipDisplayText() {
-        StringBuilder stringBuilder = new StringBuilder(quality).Append(" ").Append(name);
+        StringBuilder stringBuilder = new StringBuilder(rarity.ToString()).Append(" ").Append(name);
         if (level > 0) {
             stringBuilder.Append(" ( +").Append(level).Append(" )");
         }

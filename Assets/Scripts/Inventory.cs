@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour {
 
     public void SetItem(Item item) {
         _item = item;
-        inventoryUI.SetText(item.getTooltipDisplayText());
+        inventoryUI.SetText(item.getTooltipDisplayText(), item.GetRarityColor());
     }
 
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,5 +36,7 @@ public class Experience : MonoBehaviour
         return (level + 1) * 1000;
     }
 
-
+    internal int GetLevel() {
+        return level;
+    }
 }
