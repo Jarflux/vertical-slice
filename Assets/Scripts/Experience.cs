@@ -9,6 +9,8 @@ public class Experience : MonoBehaviour
     [SerializeField] private int level = 0;
     [SerializeField] private int currentExp = 0;
     public ExperienceBarUI experienceBarUI;
+    public GameObject scrollingTextPrefab;
+    public ScrollingTextFactory scrollingTextFactory;
 
     private void Start() {
         experienceBarUI.SetLevel(level);
@@ -17,6 +19,7 @@ public class Experience : MonoBehaviour
     }
 
     public void AddExperience(int amount) {
+        scrollingTextFactory.GetScrollingTextInstance(amount.ToString());
         if ((currentExp + amount) >= CurrentLevelMaxExp()) {
             currentExp = (amount - (CurrentLevelMaxExp() - currentExp));
             LevelUp();

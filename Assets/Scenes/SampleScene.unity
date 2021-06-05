@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 523776179}
   m_Layer: 5
   m_Name: HUD
-  m_TagString: Untagged
+  m_TagString: HUD
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1691,6 +1691,8 @@ MonoBehaviour:
   level: 0
   currentExp: 0
   experienceBarUI: {fileID: 831939637}
+  scrollingTextPrefab: {fileID: 6068083085137707982, guid: b6906c3faa6fda549a067ea54d20f1dd, type: 3}
+  hud: {fileID: 0}
 --- !u!95 &901208290 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 95152126842411956, guid: a367f32b0351f2648a0e15f3444c6f86, type: 3}
@@ -1850,7 +1852,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.2500736, y: 0.0146536995, z: -0.003785219, w: 0.96810853}
+  m_LocalRotation: {x: 0.2500736, y: 0.014653683, z: -0.0037852149, w: 0.96810853}
   m_LocalPosition: {x: -0.16859597, y: 5.006, z: -6.0132513}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2728,7 +2730,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1508745099}
-  m_LocalRotation: {x: 0.25007355, y: 0.0146536995, z: -0.0037852186, w: 0.9681086}
+  m_LocalRotation: {x: 0.25007355, y: 0.014653683, z: -0.0037852142, w: 0.9681086}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
